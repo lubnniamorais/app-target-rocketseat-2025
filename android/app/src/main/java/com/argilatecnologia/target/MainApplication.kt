@@ -1,4 +1,4 @@
-package com.target
+package com.argilatecnologia.target
 
 import android.app.Application
 import android.content.res.Configuration
