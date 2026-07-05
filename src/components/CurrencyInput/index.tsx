@@ -17,7 +17,6 @@ export function CurrencyInput({ label, ...rest }: Props) {
       <Input
         style={style.input}
         placeholderTextColor={colors.gray[400]}
-        prefix='R$ '
         delimiter='.'
         separator=','
         precision={2} //É o número de casas decimais padrão
