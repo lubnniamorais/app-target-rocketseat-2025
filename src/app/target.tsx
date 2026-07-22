@@ -72,9 +72,7 @@ export default function Target() {
         <CurrencyInput
           label='Valor alvo'
           value={amount}
-          onChangeValue={() => {
-            setAmount(0);
-          }}
+          onChangeValue={setAmount}
         />
 
         <Button

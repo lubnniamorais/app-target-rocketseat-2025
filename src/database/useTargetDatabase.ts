@@ -36,10 +36,12 @@ export function useTargetDatabase() {
         targets.id,
         targets.name,
         targets.amount,
-        COALESCE(SUM(transctions.amount), 0) AS current,
-        COALESCE((SUM(transctions.amount) / targets.amount) * 100, 0) AS percentage
+        COALESCE(SUM(transactions.amount), 0) AS current,
+        COALESCE((SUM(transactions.amount) / targets.amount) * 100, 0) AS percentage,
+        targets.created_at,
+        targets.updated_at
       FROM targets
-      LEFT JOIN transactions ON targets.id = transactions.target.id
+      LEFT JOIN transactions ON targets.id = transactions.target_id
       GROUP BY targets.id, targets.name, targets.amount
       ORDER BY current DESC
     `);
