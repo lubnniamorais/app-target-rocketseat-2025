@@ -9,6 +9,7 @@ import { Button } from '@/components/Button';
 import { useTargetDatabase } from '@/database/useTargetDatabase';
 import { useCallback, useState } from 'react';
 import { Loading } from '@/components/Loading';
+import { numberToCurrency } from '@/utils/numberToCurrency';
 
 const summary = {
   total: 'R$ 2.680,00',
@@ -28,9 +29,9 @@ export default function Index() {
       return response.map((item) => ({
         id: String(item.id),
         name: item.name,
-        current: String(item.current),
+        current: numberToCurrency(item.current),
         percentage: `${item.percentage.toFixed(0)}%`,
-        target: String(item.amount),
+        target: numberToCurrency(item.amount),
       }));
     } catch (error) {
       Alert.alert('Erro', 'Nao foi possivel carregar as metas');
