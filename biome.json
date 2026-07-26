@@ -35,7 +35,8 @@
       "correctness": {
         "useExhaustiveDependencies": "off",
         "noUnreachable": "off",
-        "noUnusedImports": "off"
+        "noUnusedImports": "off",
+        "useHookAtTopLevel": "off"
       },
       "complexity": {
         "noExtraBooleanCast": "off",
