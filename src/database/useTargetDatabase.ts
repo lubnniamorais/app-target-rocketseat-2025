@@ -25,7 +25,7 @@ export function useTargetDatabase() {
 
   async function create(data: TargetCreate) {
     const statement = await database.prepareAsync(
-      'INSERT INTO targets (name, amount) VALUES ($name, $amount);'
+      'INSERT INTO targets (name, amount) VALUES ($name, $amount)'
     );
 
     statement.executeAsync({
